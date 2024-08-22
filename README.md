@@ -12,12 +12,12 @@ Our group uses GitHub to share code, documentation, and for version control. If 
 ## Working on the Jupyter Hub
 Our group works on a shared Jupyter Hub for data visualization and analyses that do not require HPC resources. To better help each other, share data and model output, and facilitate project transitions, our team works out of a shared directory (`./hpc/lol_scratch/`). By default, only members of the `lol_group` can access the files in this directory, but you can change permissions as needed. 
 1. Access the Jupyter Hub at `https://jupyter.ceoas.oregonstate.edu/`, and log in with your OSU credentials.
-2. Set up your [GitHub SSH keys] (https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on the server. Your SSH keys should be saved in a subdirectory (typically `./.ssh/`) of your home folder, so that they remain private and not accessible to members of our group.
+2. Set up your [GitHub SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on the server. Your SSH keys should be saved in a subdirectory (typically `./.ssh/`) of your home folder, so that they remain private and not accessible to members of our group.
 3. Navigate to our group's directory `./hpc/lol_scratch/` and create a directory with your name or onid.
 4. Clone the relevant GitHub project repository for your work under your new directory.
 
 **Important:** `./hpc/lol_scratch/` is not backed up, so you should regularly push your work to GitHub.
 
 ## Setting up you project GitHub repository
-In general, we limit the files we upload to GitHub to code, text documentation, and figures to include in our documentation. To avoid having to select which files we push individually every time, it is good practice to include a `.gitignore` file in each of our project repositories. A sample `.gitignore` file is included [!!! add link!!!]
+In general, we limit the files we upload to GitHub to code, text documentation, and figures to include in our documentation. To avoid having to select which files we push individually every time, it is good practice to include a `.gitignore` file in each of our project repositories. A `.gitignore` file with several examples of file that could be ignored is [included in this repository](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/.gitignore).
 
