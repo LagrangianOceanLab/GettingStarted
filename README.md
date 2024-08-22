@@ -18,6 +18,9 @@ Our group works on a shared Jupyter Hub for data visualization and analyses that
 
 **Important:** `./hpc/lol_scratch/` is not backed up, so you should regularly push your work to GitHub.
 
-## Setting up you project GitHub repository
+## Setting up your project GitHub repository
 In general, we limit the files we upload to GitHub to code, text documentation, and figures to include in our documentation. To avoid having to select which files we push individually every time, it is good practice to include a `.gitignore` file in each of our project repositories. A `.gitignore` file with several examples of file that could be ignored is [included in this repository](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/.gitignore).
+
+## Setting up your computer for accessing servers easily
+[Add information about ssh-keys and iTerm2]
 
