@@ -2,7 +2,7 @@
 Resources to get started with research in our group
 
 ## Creating a GitHub Account
-Our group uses GitHub to share code, documentation, and for version control. If you do not already have an account, you should create one. If you want to refine your git skills, the OSU library offers git workshops, and the Ecampus Career Hub s a link to a thorough [video introductions](https://careers.ecampus.oregonstate.edu/classes/learning-github/).
+Our group uses GitHub to share code, documentation, and for version control. If you do not already have an account, you should create one. If you want to refine your git skills, the OSU library offers git workshops, and the Ecampus Career Hub has a link to a thorough [video introductions](https://careers.ecampus.oregonstate.edu/classes/learning-github/).
 
 1. Create a GitHub account.
 2. Request a [PRO account](https://education.github.com/discount_requests/application) for students, which will allow you to have private repositories.
