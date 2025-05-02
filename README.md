@@ -1,5 +1,7 @@
 # GettingStarted
-Resources to get started with research in our group
+This README outline the main resources to get started with research in our group. Other repositories contain information for more specific tasks:
+
+- [salmon-ibm-model](https://github.com/LagrangianOceanLab/salmon-ibm-model) contains step-by-step instructions and a working example to setup _OceanParcels_ on the HPC.
 
 ## Creating a GitHub Account
 Our group uses GitHub to share code, documentation, and for version control. If you do not already have an account, you should create one. If you want to refine your git skills, the OSU library offers git workshops, and the Ecampus Career Hub has a link to a thorough [video introductions](https://careers.ecampus.oregonstate.edu/classes/learning-github/).
@@ -8,6 +10,9 @@ Our group uses GitHub to share code, documentation, and for version control. If 
 2. Request a [PRO account](https://education.github.com/discount_requests/application) for students, which will allow you to have private repositories.
 3. Let us know your username so we can add you to the **LagrangianOceanLab** team.
 4. Together, we will identify or create a private repository best suited for your work.
+
+## Setting up your project GitHub repository
+In general, we limit the files we upload to GitHub to code, text documentation, and figures to include in our documentation. To avoid having to select which files we push individually every time, it is good practice to include a `.gitignore` file in each of our project repositories. A `.gitignore` file with several examples of file that could be ignored is [included in this repository](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/.gitignore).
 
 ## Working on the Jupyter Hub
 Our group works on a shared Jupyter Hub for data visualization and analyses that do not require HPC resources. To better help each other, share data and model output, and facilitate project transitions, our team works out of a shared directory (`./hpc/lol_scratch/`). By default, only members of the `lol_group` can access the files in this directory, but you can change permissions as needed. 
@@ -18,8 +23,24 @@ Our group works on a shared Jupyter Hub for data visualization and analyses that
 
 **Important:** `./hpc/lol_scratch/` is not backed up, so you should regularly push your work to GitHub.
 
-## Setting up your project GitHub repository
-In general, we limit the files we upload to GitHub to code, text documentation, and figures to include in our documentation. To avoid having to select which files we push individually every time, it is good practice to include a `.gitignore` file in each of our project repositories. A `.gitignore` file with several examples of file that could be ignored is [included in this repository](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/.gitignore).
+## Working on the HPC
+You must first [fill out this form to request an account on Wildwood](https://shell.cqls.oregonstate.edu/access/) and sign up for an orientation with Chris Sullivan. Those orientations are tailored to your skills and objectives, so feel free to discuss with other group members what they have found useful.
+
+To access Wildwood, ssh using your university credentials:
+```
+ssh -Y ONID@hpc.cqls.oregonstate.edu
+```
+
+Your home directory should include soft links to our storage spaces, `Garwood_Lab` and `lol_scratch` (see next section).
+
+## Storage spaces \& workflow
+Our group has access to the following two storage spaces:
+- `Garwood_Lab` which is backed up in two locations with daily (?) snapshots but has a slow connection to our network
+- `lol_scratch` which is <u>not</u> backed up but has a faster connection to our network
+
+The recommended workflow is to run simulations reading \& writing to `lol_scratch` and copy all output files to `Garwood_Lab` once the simulation has completed and we are satisfied that the files need to be kept. Input files should be stored on `Garwood_Lab` and copied on `lol_scratch` when they are actively used.
+
+Although visualizations often do not require the fastest connection, the Jupyter Hub is currently only connected to `lol_scratch`, meaning that the files must be left in that space to be analyzed. The structure of our storage is likely to change in the upcoming years.
 
 ## Using conda
 #### 1. Install [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html). 
