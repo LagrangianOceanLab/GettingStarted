@@ -1,7 +1,10 @@
 # GettingStarted
-This README outline the main resources to get started with research in our group. Other repositories contain information for more specific tasks:
+This README outlines the main resources to get started with research in our group. Other files and repositories contain information for more specific tasks.
 
-- [salmon-ibm-model](https://github.com/LagrangianOceanLab/salmon-ibm-model) contains step-by-step instructions and a working example to setup _OceanParcels_ on the HPC.
+### Files:
+- [`.gitignore`](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/.gitignore) is a sample file that you can include in your GitHub repositories to ignore local files (typically large files or files that can be recreated from the code) during a push to the remote repository.
+
+- [`salmon-ibm-model`](https://github.com/LagrangianOceanLab/salmon-ibm-model) contains step-by-step instructions and a working example to setup _OceanParcels_ on the HPC.
 
 ## Creating a GitHub Account
 Our group uses GitHub to share code, documentation, and for version control. If you do not already have an account, you should create one. If you want to refine your git skills, the OSU library offers git workshops, and the Ecampus Career Hub has a link to a thorough [video introductions](https://careers.ecampus.oregonstate.edu/classes/learning-github/).
