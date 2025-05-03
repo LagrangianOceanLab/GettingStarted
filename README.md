@@ -1,9 +1,10 @@
 # GettingStarted
 This README outlines the main resources to get started with research in our group. Other files and repositories contain information for more specific tasks.
 
-### Files:
+#### Files:
 - [`.gitignore`](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/.gitignore) is a sample file that you can include in your GitHub repositories to ignore local files (typically large files or files that can be recreated from the code) during a push to the remote repository.
 
+#### Repositories
 - [`salmon-ibm-model`](https://github.com/LagrangianOceanLab/salmon-ibm-model) contains step-by-step instructions and a working example to setup _OceanParcels_ on the HPC.
 
 ## Creating a GitHub Account
