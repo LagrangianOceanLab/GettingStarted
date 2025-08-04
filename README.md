@@ -35,14 +35,14 @@ To access Wildwood, ssh using your university credentials:
 ssh -Y ONID@hpc.cqls.oregonstate.edu
 ```
 
-Your home directory should include soft links to our storage spaces, `Garwood_Lab` and `lol_scratch` (see next section).
+Your home directory should include soft links to our storage spaces, `Lol_Lab` and `lol_scratch` (see next section).
 
 ## Storage spaces \& workflow
 Our group has access to the following two storage spaces:
-- `Garwood_Lab` which is backed up in two locations with daily (?) snapshots but has a slow connection to our network
+- `Lol_Lab` which is backed up in two locations with daily (?) snapshots but has a slow connection to our network
 - `lol_scratch` which is <u>not</u> backed up but has a faster connection to our network
 
-The recommended workflow is to run simulations reading \& writing to `lol_scratch` and copy all output files to `Garwood_Lab` once the simulation has completed and we are satisfied that the files need to be kept. Input files should be stored on `Garwood_Lab` and copied on `lol_scratch` when they are actively used.
+The recommended workflow is to run simulations reading \& writing to `lol_scratch` and copy all output files to `Lol_Lab` once the simulation has completed and we are satisfied that the files need to be kept. Input files should be stored on `Lol_Lab` and copied on `lol_scratch` when they are actively used.
 
 Although visualizations often do not require the fastest connection, the Jupyter Hub is currently only connected to `lol_scratch`, meaning that the files must be left in that space to be analyzed. The structure of our storage is likely to change in the upcoming years.
 
@@ -89,3 +89,7 @@ ssh-keygen -t ed25519
 
 ### iTerm2
 iTerm2 is highly customizable Terminal application. One of my favorite features is to create profiles for each server that I access, which allows me to easily know *where* I am in a Terminal window. I detailed how to setup profiles across platform in the [scientific-workflow repository](https://github.com/jessecusack/scientific-workflow/blob/main/macOS_setup.md#step-4---customize-iterm2) maintained by Jesse Cusack.
+
+
+## Interesting external links
+- [CESM Crocodile](https://github.com/CROCODILE-CESM): to setup regional MOM6 configurations. See `CrocoDash` for Jupyter Notebook for grid generation, CESM setup, forcing file generation. 
