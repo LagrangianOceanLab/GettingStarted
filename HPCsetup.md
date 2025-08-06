@@ -10,14 +10,14 @@ To make logging on easier, it can be useful to [set up ssh keys on the server](h
 
 Log into the HPC cluster. To download Miniconda, run:
 
-```bash
+```
 cd ~
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ```
 
 To install Miniconda, run:
 
-```bash
+```
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
@@ -27,7 +27,7 @@ As part of the installation, you may be asked for permission to modify your term
 
 Upon successful installation, I would recommend setting `conda-forge` as the default channel package searches. I find that it has a more complete list of packages than the standard conda channel. To do so, run the following in the terminal:
 
-```bash
+```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
@@ -36,18 +36,19 @@ If the `conda` command is not recognized when you try to use it, you might have 
 
 1. Open `~/.bashrc` with your preferred editor. Note that the example uses `vi`.
 
-```bash
+```
 vi ~/.bashrc
 ```
 
 2. Add the path to your `miniconda3/bin` folder to your `.bashrc` by including the following line (replace `/path/to/miniconda3/bin` with the actual path, perhaps `~/miniconda3/bin`):
 
-```bash
+```
 export PATH="/path/to/miniconda3/bin:$PATH"
 ```
 
 3. Source the configuration or restart your Terminal session:
-```bash
+
+```
 source ~/.bashrc
 ```
 
