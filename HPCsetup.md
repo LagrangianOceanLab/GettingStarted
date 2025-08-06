@@ -32,5 +32,24 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
+If the `conda` command is not recognized when you try to use it, you might have to add the path to `~/miniconda3/bin/` to your `.bashrc` file.
+
+1. Open `~/.bashrc` with your preferred editor. Note that the example uses `vi`.
+
+```bash
+vi ~/.bashrc
+```
+
+2. Add the path to your `miniconda3/bin` folder to your `.bashrc` by including the following line (replace `/path/to/miniconda3/bin` with the actual path, perhaps `~/miniconda3/bin`):
+
+```bash
+export PATH="/path/to/miniconda3/bin:$PATH"
+```
+
+3. Source the configuration or restart your Terminal session:
+```bash
+source ~/.bashrc
+```
+
 ## Working with Jupyter Lab
 [Add instructions after testing them.]
