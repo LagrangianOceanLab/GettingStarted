@@ -4,6 +4,8 @@ This README outlines the main resources to get started with research in our grou
 #### Files:
 - [`.gitignore`](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/.gitignore) is a sample file that you can include in your GitHub repositories to ignore local files (typically large files or files that can be recreated from the code) during a push to the remote repository.
 
+- [`HPCsetup.md`](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/HPCsetup.md) contains information that is specific to our HPC workflow.
+
 #### Repositories
 - [`salmon-ibm-model`](https://github.com/LagrangianOceanLab/salmon-ibm-model) contains step-by-step instructions and a working example to setup _OceanParcels_ on the HPC.
 
@@ -17,6 +19,8 @@ Our group uses GitHub to share code, documentation, and for version control. If 
 
 ## Setting up your project GitHub repository
 In general, we limit the files we upload to GitHub to code, text documentation, and figures to include in our documentation. To avoid having to select which files we push individually every time, it is good practice to include a `.gitignore` file in each of our project repositories. A `.gitignore` file with several examples of file that could be ignored is [included in this repository](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/.gitignore).
+
+To clone your GitHub repository, you will need to create an `ssh-key` for each of the computer that you will be working from (e.g., local and server), following the [GitHub instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Make sure to select the correct platform; the link might default to your local platform.
 
 ## Working on the Jupyter Hub
 Our group works on a shared Jupyter Hub for data visualization and analyses that do not require HPC resources. To better help each other, share data and model output, and facilitate project transitions, our team works out of a shared directory (`./hpc/lol_scratch/`). By default, only members of the `lol_group` can access the files in this directory, but you can change permissions as needed. 
@@ -75,13 +79,32 @@ Using the same command, you can install Python modules commonly used in oceanogr
 - `matplotlib`
 
 ## Setting up your computer for easily accessing servers
+### 1. ssh keys
 To easily access a remote server, you can set up `ssh-keys` on your local computer. It is best practice to create a new set of keys for each computer/server combination, so that you can easily deactivate a key if it becomes compromised. The instructions on [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server) and [GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) are two great resources for creating `ssh-keys`. 
 
-Note that you should use the ed25519 signature system rather than the rsa system mentioned on DigitalOcean, and use an informative filename when saving them (e.g., I include the name of the server):
+Note that you should use the ed25519 signature system rather than the rsa system mentioned on DigitalOcean, and use an informative filename when saving them (e.g., I include the name of the server such as `id_ed25519_hostname`):
 
 ```
 ssh-keygen -t ed25519
 ```
+
+### 2. config file
+After creating `ssh-keys`, add your credentials to your `config` file found at `~/.ssh/config`. Replace `hostname` and `username` by the appropriate names.
+
+```
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+
+Host hostname
+  User username
+  Hostname hostname.ceoas.oregonstate.edu
+  IdentityFile ~/.ssh/id_ed25519_hostname
+  ServerAliveInterval 5m
+```
+
+### 3. Create a profile in iTerm2 for each of the server you have access to (_optional_)
+See instructions below. Jesse Cusack no longer maintains his `scientific-workflow` so I will recopy my instructions here. Stay tuned!
 
 ## Download useful tools
 ### Visual Studio Code

@@ -2,9 +2,11 @@
 
 These instructions were modified from [Jesse Cusack's scientific-workflow](https://github.com/jessecusack/scientific-workflow/blob/main/HPC_clusters.md).
 
-## Setting up ssh keys
+## Quick access to the server
+To more quickly access the server, you can set up [ssh keys on your local machine, add login credentials to your config file, and create profiles in iTerm2 with different colors and shortcuts](https://github.com/LagrangianOceanLab/GettingStarted/tree/main?tab=readme-ov-file#setting-up-your-computer-for-easily-accessing-servers). 
 
-To make logging on easier, it can be useful to [set up ssh keys on the server](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-2). Best practice is to have a unique ssh key for each combination of local computer and server, so that they can be easily deactivated if computers or access are lost.
+## Working with GitHub on the server
+To clone your project repository on the server, you will need to create an `ssh-key` on the server, following the [instruction on GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux). Make sure to select the `Linux` tab.
 
 ## Installing Miniconda on the server
 
