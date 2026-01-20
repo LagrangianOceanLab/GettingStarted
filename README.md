@@ -5,6 +5,7 @@ This README outlines the main resources to get started with research in our grou
 - [`.gitignore`](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/.gitignore) is a sample file that you can include in your GitHub repositories to ignore local files (typically large files or files that can be recreated from the code) during a push to the remote repository.
 
 - [`HPCsetup.md`](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/HPCsetup.md) contains information that is specific to our HPC workflow.
+- [`GitHubCollab.md`](https://github.com/LagrangianOceanLab/GettingStarted/blob/main/GitHubCollab.md) contains advice for our collaborative GitHub workflow.
 
 #### Repositories
 - [`salmon-ibm-model`](https://github.com/LagrangianOceanLab/salmon-ibm-model) contains step-by-step instructions and a working example to setup _OceanParcels_ on the HPC.
