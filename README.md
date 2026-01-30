@@ -23,33 +23,55 @@ In general, we limit the files we upload to GitHub to code, text documentation, 
 
 To clone your GitHub repository, you will need to create an `ssh-key` for each of the computer that you will be working from (e.g., local and server), following the [GitHub instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Make sure to select the correct platform; the link might default to your local platform.
 
-## Working on the Jupyter Hub
-Our group works on a shared Jupyter Hub for data visualization and analyses that do not require HPC resources. To better help each other, share data and model output, and facilitate project transitions, our team works out of a shared directory (`./hpc/lol_scratch/`). By default, only members of the `lol_group` can access the files in this directory, but you can change permissions as needed. 
-1. Access the Jupyter Hub at `https://jupyter.ceoas.oregonstate.edu/`, and log in with your OSU credentials.
-2. Set up your [GitHub SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) on the server. Your SSH keys should be saved in a subdirectory (typically `./.ssh/`) of your home folder, so that they remain private and not accessible to members of our group.
-3. Navigate to our group's directory `./hpc/lol_scratch/` and create a directory with your name or onid.
-4. Clone the relevant GitHub project repository for your work under your new directory.
-
-**Important:** `./hpc/lol_scratch/` is not backed up, so you should regularly push your work to GitHub.
-
 ## Working on the HPC
-You must first [fill out this form to request an account on Wildwood](https://shell.cqls.oregonstate.edu/access/) and sign up for an orientation with Chris Sullivan. Those orientations are tailored to your skills and objectives, so feel free to discuss with other group members what they have found useful.
+You must first [fill out this form to request an account on our HPC](https://shell.cqls.oregonstate.edu/access/) and sign up for an orientation with Chris Sullivan. Those orientations are tailored to your skills and objectives, so feel free to discuss with other group members what they have found useful.
+
+We use two main interface to interact with the HPC:
+- `wildwood`: a cluster with several machines accessed via Terminal
+- `jupyter-hpc`: a shared Jupyter Hub for data visualization and analyses
+
+The first time you access a server, make sure to set up your [GitHub SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). It is good practice to generate a new SSH key for each computer/server combo.
+
+Your SSH keys should be saved in a subdirectory (typically `./.ssh/`) of your home folder, so that they remain private and not accessible to members of our group.
+
+### Accessing Wildwood
 
 To access Wildwood, ssh using your university credentials:
 ```
 ssh -Y ONID@hpc.cqls.oregonstate.edu
 ```
 
-Your home directory should include soft links to our storage spaces, `Lol_Lab` and `lol_scratch` (see next section).
+### Accessing the Jupyter Hub
+Access the Jupyter Hub at `https://jupyter-hpc.ceoas.oregonstate.edu/`, and log in with your OSU credentials.
+
+## Setting up useful soft links (i.e., shortcuts)
+If your HPC home directory (accessed either through `wildwood` or `jupyter-hpc`) does not already include soft links to the general `ceoas` storage (in case you work with other groups) and LOL's storage spaces, `Lol_Lab` and `lol_scratch` (see next section), create them with the following commands and recommended names:
+
+```
+ln -s /ceoas ~/ceoas_projects
+ln -s /ceoas/lol_scratch ~/lol_scratch
+ln -s /ceoas ~/nfs7/CEOAS/Lol_Lab
+```
+
+To remove soft links, it is recommended to `unlink` them to avoid the risk of deleting folders within them if using the `rm` command.
 
 ## Storage spaces \& workflow
-Our group has access to the following two storage spaces:
-- `Lol_Lab` which is backed up in two locations with daily (?) snapshots but has a slow connection to our network
-- `lol_scratch` which is <u>not</u> backed up but has a faster connection to our network
+To better help each other, share data and model output, and facilitate project transitions, our team works out of two shared storage spaces:
+- `/nfs7/CEOAS/Lol_Lab/` which is backed up in two locations with daily (?) snapshots but has a slow connection to our network
+- `/ceoas/lol_scratch/` which is <u>not</u> backed up but has a faster connection to our network
 
-The recommended workflow is to run simulations reading \& writing to `lol_scratch` and copy all output files to `Lol_Lab` once the simulation has completed and we are satisfied that the files need to be kept. Input files should be stored on `Lol_Lab` and copied on `lol_scratch` when they are actively used.
+By default, only members of the `lol_group` can access the files in this directory, but you can change permissions as needed. 
 
-Although visualizations often do not require the fastest connection, the Jupyter Hub is currently only connected to `lol_scratch`, meaning that the files must be left in that space to be analyzed. The structure of our storage is likely to change in the upcoming years.
+The recommended workflow is to run simulations reading \& writing to `lol_scratch` and copy all output files to `Lol_Lab` once the simulation has completed and we are satisfied that the files need to be kept. Input files should be stored on `Lol_Lab` and only copied on `lol_scratch` when they are actively used.
+
+## Create a user directory in each of our storage space
+1. Create a directory using your ONID in `lol_scratch` and `Lol_Lab`. This is where you will store files that are specific to your project. 
+2. Clone the relevant GitHub project repository for your work under your new directory.
+3. Make sure to always `git pull` when you start working on your project, and `git push` regularly throughout your session and at the very end.
+
+We also have shared folders for data and model output.
+- [upcoming: list shared folders]
+
 
 ## Using conda
 #### 1. Install [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html). 
