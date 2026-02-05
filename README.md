@@ -50,10 +50,10 @@ If your HPC home directory (accessed either through `wildwood` or `jupyter-hpc`)
 ```
 ln -s /ceoas ~/ceoas_projects
 ln -s /ceoas/lol_scratch ~/lol_scratch
-ln -s /ceoas ~/nfs7/CEOAS/Lol_Lab
+ln -s /nfs7/CEOAS/Lol_Lab ~/Lol_Lab
 ```
 
-To remove soft links, it is recommended to `unlink` them to avoid the risk of deleting folders within them if using the `rm` command.
+To remove soft links, use `unlink` to avoid the risk of deleting folders within them if using the `rm` command.
 
 ## Storage spaces \& workflow
 To better help each other, share data and model output, and facilitate project transitions, our team works out of two shared storage spaces:
