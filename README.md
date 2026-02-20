@@ -34,6 +34,15 @@ The first time you access a server, make sure to set up your [GitHub SSH keys](h
 
 Your SSH keys should be saved in a subdirectory (typically `./.ssh/`) of your home folder, so that they remain private and not accessible to members of our group.
 
+To copy files to the HPC, you can use the **scp** command. The general syntax is as follows:
+```
+scp file_to_be_copied your_login@shell.hpc.oregonstate.edu:path_to_destiny_folder
+```
+or 
+```
+scp file_to_be_copied your_login@shell-access.cqls.oregonstate.edu:path_to_destiny_folder
+```
+
 ### Accessing Wildwood
 
 To access Wildwood, ssh using your university credentials:
@@ -42,7 +51,10 @@ ssh -Y ONID@hpc.cqls.oregonstate.edu
 ```
 
 ### Accessing the Jupyter Hub
-Access the Jupyter Hub at `https://jupyter-hpc.ceoas.oregonstate.edu/`, and log in with your OSU credentials.
+Access the Jupyter Hub at `https://jupyter-hpc.ceoas.oregonstate.edu/`, and log in with your OSU credentials. \
+
+You can copy files from your local computer to the HPC by dragging and dropping them into the file browser panel on the right side of JupyterHub.
+
 
 ## Setting up useful soft links (i.e., shortcuts)
 If your HPC home directory (accessed either through `wildwood` or `jupyter-hpc`) does not already include soft links to the general `ceoas` storage (in case you work with other groups) and LOL's storage spaces, `Lol_Lab` and `lol_scratch` (see next section), create them with the following commands and recommended names:
