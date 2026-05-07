@@ -16,6 +16,7 @@ __pycache__/
 
 # MATLAB
 *.m~
+*.asv
 
 # R
 .Rhistory
