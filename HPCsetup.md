@@ -56,3 +56,20 @@ source ~/.bashrc
 
 ## Working with Jupyter Lab
 [Add instructions after testing them.]
+
+## CEOAS partitions
+
+CEOAS has numerous partitions. Which one you should use depends on your work:
+- `ceoas` : general x86 CPU-only servers
+- `ceoas-arm` : ARM servers (namely the Grace Hoppers)
+- `ceoas-gpu` :  x86 servers with GPUs
+- `brizo` : machines owned in part by LOL
+- PI machine partitions (brizo, ewg, etc.)
+- `ceoas-lowprio`, `ceoas-arm-lowprio`, `ceoas-gpu-lowprio` : PI machines at lower priority (i.e., will run if no higher priority jobs are submitted)
+
+- `ceoas-interact` : primarily for testing; jobs are limited (no exclusive, maximum of 8 cores and 64GB of RAM)
+
+## Nodes that we like to use
+- `brizo` : [add specs], new nodes, quite large, typically reserved for ocean simulations and not particle tracking
+- `amaterasu` : 2x8-core processors 
+- `yatagarasu` : 2x12-core processors
