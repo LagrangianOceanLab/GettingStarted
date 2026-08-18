@@ -34,14 +34,17 @@ The first time you access a server, make sure to set up your [GitHub SSH keys](h
 
 Your SSH keys should be saved in a subdirectory (typically `./.ssh/`) of your home folder, so that they remain private and not accessible to members of our group.
 
-To copy files to the HPC, you can use the **scp** command. The general syntax is as follows:
+To copy files to/from the HPC, you can use the **scp** command (the -O flag could be necessary to force a legacy SCP protocol). The general syntax is as follows:
 ```
-scp file_to_be_copied your_login@shell.hpc.oregonstate.edu:path_to_destiny_folder
+scp source destination
 ```
-or 
-```
-scp file_to_be_copied your_login@shell-access.cqls.oregonstate.edu:path_to_destiny_folder
-```
+where `source` and `destination` can be your local computer or the server.
+
+On the HPC, files can be copied using your ONID and the following hostnames:
+- `ONID@files.hpc.oregonstate.edu`; or
+- `ONID@files-hpc.cqls.oregonstate.edu`
+
+In a pinch, you can also upload/download files manually through `jupyter-hpc`.
 
 ### Accessing Wildwood
 
@@ -51,7 +54,7 @@ ssh -Y ONID@hpc.cqls.oregonstate.edu
 ```
 
 ### Accessing the Jupyter Hub
-Access the Jupyter Hub at `https://jupyter-hpc.ceoas.oregonstate.edu/`, and log in with your OSU credentials. \
+Access the Jupyter Hub at `https://jupyter-hpc.ceoas.oregonstate.edu/`, and log in with your OSU credentials. 
 
 You can copy files from your local computer to the HPC by dragging and dropping them into the file browser panel on the right side of JupyterHub.
 
@@ -139,15 +142,27 @@ Host hostname
 ```
 
 ### 3. Create a profile in iTerm2 for each of the server you have access to (_optional_)
-See instructions below. Jesse Cusack no longer maintains his `scientific-workflow` so I will recopy my instructions here. Stay tuned!
+See details below. 
 
 ## Download useful tools
 ### Visual Studio Code
-[VSCode](https://code.visualstudio.com/) is a versatile code editor. For instance, it offers markdown previews to help edit this `README.md` on your local computer. On a Mac, pressing `command + k` followed by pressing `v` will open a side-by-side markdown preview.
+[VSCode](https://code.visualstudio.com/) is a versatile code editor. For instance, it offers markdown previews to help edit this `README.md` on your local computer. 
+
+**Useful trick:** \
+On a Mac, pressing `command + k` followed by pressing `v` will open a side-by-side markdown preview.
 
 ### iTerm2
-iTerm2 is highly customizable Terminal application. One of my favorite features is to create profiles for each server that I access, which allows me to easily know *where* I am in a Terminal window. I detailed how to setup profiles across platform in the [scientific-workflow repository](https://github.com/jessecusack/scientific-workflow/blob/main/macOS_setup.md#step-4---customize-iterm2) maintained by Jesse Cusack.
+iTerm2 is highly customizable Terminal application. One of my favorite features is to create profiles for each server that I access, which allows me to easily know *where* I am in my many Terminal windows. [@jessecusack](https://github.com/jessecusack) likes to set `ctrl + ~` to activate a terminal that drops down from the top of the screen - instructions [here](https://dev.to/vikbert/drop-down-iterm2-in-macos-2od). 
 
+#### Creating profiles and settings across computers
+
+In iTerm2, you can create unique profiles for each of your working spaces (e.g., local computer, server, vim). For each of these profiles, you can customize colors, specify shortcut keys to activate them, as well as starting commands (e.g., `ssh server`). This makes it far easier to know where you are.
+
+iTerm2 > Preferences > Profiles
+
+If you use multiple computers (e.g., laptop and workstation), you can sync your iTerm2 setting (including profiles) by saving them in a Box or Google Drive folder.
+
+On your main computer, go to iTerm2 > Preferences > General > Preferences and click Load preferences from a custom folder or URL. Select a Box or Google Drive folder and save your local settings. Repeat the process on a secondary computer, but this time, do not save your local settings. After you restart iTerm2, the settings from your main computer should be available on your secondary computer.
 
 ## Interesting external links
 - [CESM Crocodile](https://github.com/CROCODILE-CESM): to setup regional MOM6 configurations. See `CrocoDash` for Jupyter Notebook for grid generation, CESM setup, forcing file generation.
